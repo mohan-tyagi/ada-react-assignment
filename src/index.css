@@ -1,1 +1,84 @@
-@import "tailwindcss";
+@import './figma-tokens.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: var(--figma-font-body);
+  --font-display: var(--figma-font-heading);
+
+  --color-background: var(--figma-page);
+  --color-foreground: var(--figma-text);
+  --color-muted: var(--figma-muted);
+  --color-muted-foreground: var(--figma-text-muted);
+  --color-border: var(--figma-border);
+  --color-card: var(--figma-elevated);
+  --color-card-foreground: var(--figma-text);
+  --color-primary: var(--figma-primary);
+  --color-primary-foreground: var(--figma-on-primary);
+  --color-accent: var(--figma-accent-soft);
+  --color-accent-foreground: var(--figma-accent-foreground);
+  --color-inverse: var(--figma-inverse);
+  --color-inverse-foreground: var(--figma-on-inverse);
+  --color-secondary-fg: var(--figma-text-secondary);
+  --color-cta-from: var(--figma-cta-from);
+  --color-cta-to: var(--figma-cta-to);
+  --color-on-cta: var(--figma-on-cta);
+  --color-cta-subtext: var(--figma-cta-subtext);
+  --color-glow-primary: var(--figma-glow-primary);
+  --color-glow-muted: var(--figma-glow-muted);
+  --color-header: var(--figma-header);
+  --color-nav: var(--figma-nav);
+  --color-cream: var(--figma-page);
+  --color-gold-line: var(--figma-gold-border);
+  --color-gold-mid: var(--figma-gold-mid);
+  --color-btn-text: var(--figma-button-text);
+  --color-wave: var(--figma-wave);
+  --color-why-bg: var(--figma-why-bg);
+  --color-service-icon: var(--figma-service-icon-bg);
+  --color-gold-divider: var(--figma-gold-divider);
+  --color-testimonial-bg: var(--figma-testimonial-bg);
+  --color-testimonial-card: var(--figma-testimonial-card);
+  --color-testimonial-footer: var(--figma-testimonial-footer);
+  --color-states-bg: var(--figma-states-bg);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-gold-gradient {
+    background-image: linear-gradient(
+      105deg,
+      var(--figma-gold-from),
+      var(--figma-gold-mid) 45%,
+      var(--figma-gold-to)
+    );
+  }
+
+  /* Horizontal gold → yellow */
+  .bg-gold-gradient-horizontal {
+    background-image: linear-gradient(
+      90deg,
+      var(--figma-gold-from) 0%,
+      var(--figma-gold-mid) 48%,
+      var(--figma-gold-to) 100%
+    );
+  }
+
+  .bg-gold-gradient:hover,
+  .bg-gold-gradient-horizontal:hover {
+    filter: brightness(1.05);
+  }
+
+  /* Semi-circle cap on top of image */
+  .arch-image-top {
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+  }
+}

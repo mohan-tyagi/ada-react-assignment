@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-label="Placeholder  replace with Figma export">
+  <defs>
+    <linearGradient id="h" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0e7ff"/>
+      <stop offset="100%" style="stop-color:#c7d2fe"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1200" fill="url(#h)"/>
+  <rect x="80" y="720" width="800" height="4" fill="#4f46e5" opacity="0.35"/>
+  <text x="480" y="600" text-anchor="middle" fill="#312e81" font-family="system-ui,sans-serif" font-size="22" font-weight="600">hero</text>
+  <text x="480" y="640" text-anchor="middle" fill="#4338ca" font-family="system-ui,sans-serif" font-size="14">Export from Figma ’ public/figma-assets/</text>
+</svg>

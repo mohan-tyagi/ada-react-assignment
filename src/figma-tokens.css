@@ -1,0 +1,58 @@
+/* Ada Psychiatry — palette aligned to Figma (black, gold gradient, cream) */
+
+:root {
+  --figma-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --figma-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --figma-header: #000000;
+  --figma-page: #fdf8e1;
+  --figma-elevated: #ffffff;
+  --figma-muted: #f5eed0;
+  --figma-why-bg: #f5efe1;
+  /* Accordion rules / decorative gold (Figma) */
+  --figma-gold-divider: #d4af37;
+  --figma-wave: #fff9e8;
+  /* Soft tan circle behind service icons (Figma) */
+  --figma-service-icon-bg: #ebe3d4;
+  --figma-border: #e5dcc8;
+  --figma-gold-border: #b8942e;
+
+  --figma-text: #1a1a1a;
+  --figma-text-secondary: #3d3d3d;
+  --figma-text-muted: #5c5c5c;
+
+  --figma-nav: #ffffff;
+  --figma-button-text: #0a0a0a;
+
+  /* Primary CTA pill — gold to warm yellow */
+  --figma-gold-from: #9a7628;
+  --figma-gold-mid: #c9a227;
+  --figma-gold-to: #f0d78c;
+
+  /* Map legacy token names used in @theme */
+  --figma-primary: var(--figma-gold-mid);
+  --figma-primary-hover: #a67c2d;
+  --figma-on-primary: var(--figma-button-text);
+
+  --figma-accent-soft: rgba(201, 162, 39, 0.15);
+  --figma-accent-foreground: #7a5e1c;
+
+  --figma-inverse: #000000;
+  --figma-on-inverse: #fdf8e1;
+
+  --figma-cta-from: var(--figma-gold-from);
+  --figma-cta-to: var(--figma-gold-to);
+  --figma-on-cta: #ffffff;
+  --figma-cta-subtext: rgba(255, 255, 255, 0.85);
+
+  --figma-glow-primary: rgba(201, 162, 39, 0.2);
+  --figma-glow-muted: rgba(0, 0, 0, 0.08);
+
+  /* Patient testimonials */
+  --figma-testimonial-bg: #fdf7e7;
+  --figma-testimonial-card: #efe8d8;
+  --figma-testimonial-footer: #c68e36;
+
+  /* States we serve */
+  --figma-states-bg: #fdf9f0;
+}

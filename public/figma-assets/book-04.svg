@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 480 640" role="img" aria-label="Book cover placeholder 4">
+  <rect width="480" height="640" fill="#ecfccb"/>
+  <rect x="40" y="48" width="400" height="480" rx="8" fill="#d9f99d"/>
+  <text x="240" y="320" text-anchor="middle" fill="#3f6212" font-family="system-ui,sans-serif" font-size="16">book-04</text>
+</svg>

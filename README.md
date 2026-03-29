@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# Ada Psychiatry — React homepage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing homepage for **Ada Psychiatry**, built with **React 19**, **TypeScript**, **Vite 8**, and **Tailwind CSS v4**. The UI follows a black / gold / cream design system with section-based layout (hero, services, testimonials, FAQ, etc.).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run locally
 
-## React Compiler
+### Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Node.js** 20+ (LTS recommended)
+- **npm** 10+ (comes with Node)
 
-## Expanding the ESLint configuration
+### Install dependencies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Start the dev server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Vite prints a local URL (usually **http://localhost:5173**). Open it in your browser. Edit files under `src/`; changes reload via HMR.
+
+### Production build (optional)
+
+```bash
+npm run build
+```
+
+Output is written to `dist/`. To serve that build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## npm scripts
+
+| Script            | Description                                      |
+| ----------------- | ------------------------------------------------ |
+| `npm run dev`     | Development server with hot reload               |
+| `npm run build`   | Typecheck (`tsc -b`) + Vite production build     |
+| `npm run preview` | Serve the `dist/` folder locally                  |
+| `npm run lint`    | ESLint over the project                          |
+| `npm run format`  | Prettier (with Tailwind class sorting)           |
+
+---
+
+## How the project is organized
+
+### App flow
+
+1. **`src/main.tsx`** — Mounts the root React tree.
+2. **`src/App.tsx`** — Wraps the page in **`Layout`** and renders **`HomePage`**.
+3. **`src/components/Layout.tsx`** — Shell: **Header**, **`<main id="main">`**, **Footer**.
+4. **`src/pages/HomePage.tsx`** — Composes all homepage sections in order (hero, founder, treatment focus, quote banner, services, etc.).
+
+### Main folders
+
+| Path                    | Role |
+| ----------------------- | ---- |
+| `src/components/`       | Shared UI: **Header**, **Footer**, **Layout**, **GoldButton**, `logo.png` usage in header |
+| `src/components/home/`  | Homepage-only sections (hero, services, FAQ, …); re-exported from `home/index.ts` |
+| `src/content/`          | Data and copy: **`images.ts`** (URLs, `heroSlides`), **`treatmentFocus.ts`** |
+| `src/assets/`           | Static images imported by Vite (e.g. `homeImages/`, `logo.png`) |
+| `src/figma-tokens.css`  | CSS variables for colors / fonts; imported in **`src/index.css`** with Tailwind `@theme` |
+
+### Styling
+
+- **Tailwind v4** via **`@tailwindcss/vite`** (`vite.config` plugin).
+- Design tokens live in **`figma-tokens.css`** and are mapped in **`index.css`** (`@theme`) so utilities like `bg-cream`, `text-gold-mid`, etc. stay consistent.
+
+### Icons
+
+- **`lucide-react`** is used for vector icons in sections such as **Services** and **How it works**.
+
+---
+
+## Editor note
+
+VS Code may flag Tailwind’s `@theme` in CSS as an unknown at-rule. The repo includes **`.vscode/settings.json`** so CSS lint ignores that rule.
+
+---
+
+## License / usage
+
+Private assignment project (`"private": true` in `package.json`).

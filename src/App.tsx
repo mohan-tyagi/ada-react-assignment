@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import './App.css'
+import { Layout } from './components/Layout'
+import { HomePage } from './pages/HomePage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <h1 className="text-3xl font-bold">
-      Hello vite
-    </h1>
+    <Layout>
+      <HomePage />
+    </Layout>
   )
 }
 
